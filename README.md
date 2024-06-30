@@ -93,4 +93,23 @@ https://db-engines.com/en/ranking/relational+dbms
 # Menggunakan Database
 - \c namadatabase
 
+# Tipe Data
+- Saat kita membuat tabel di Excel, kita bisa menentukan tipe data apa yang kita masukkan ke tiap kolom di Excel 
+- Di PostgreSQL, kita juga bisa menentukan tipe data tiap kolom yang kita buat di sebuah tabel 
+- Ada banyak sekali tipe data yang tersedia di PostgreSQL, dari yang sederhana, sampai yang kompleks. 
+- Biasanya kita akan menggunakan tipe data sesuai dengan kebutuhan kolom yang perlu kita buat
+ 
+![Tipe Data](pic/img_3.png)
+
+# Tipe Data Number
+- Secara garis besar, tipe data number di PostgreSQL ada dua jenis; 
+- Integer, atau tipe number bilangan bulat 
+- Floating Point, atau tipe data number pecahan
+
+![Tipe Data Number](pic/img_4.png)
+
+# DECIMAL / NUMERIC
+- Selain Integer dan Floating Point, di PostgreSQL terdapat tipe data DECIMAL / NUMERIC 
+- Ini tipe data number khusus yang bisa ditentukan jumlah precision dan scale nya
+
 

@@ -1,0 +1,43 @@
+@startchen
+!theme amiga
+
+entity Penjual {
+    'Attribute Key atau dibilang Primary Key, yaitu attribute kunci yang merepresentasikan Entity tersebut
+    email : VARCHAR <<key>>
+    nama : VARCHAR
+}
+
+entity Barang {
+'    Dalam Relationship, kita juga bisa menambahkan attribute, dan biasanya kita juga perlu menentukan
+'    Attribute Foreign Key, yaitu Attribute Key di Entity yang menjadi digunakan sebagai data untuk lookup(melihat)
+'    ke Entity pemilik relasi tersebut
+    sku : VARCHAR <<key>>
+    nama : VARCHAR
+    harga : BIGINT
+}
+
+entity Pembeli {
+    email : VARCHAR <<key>>
+    nama : VARCHAR
+    alamat : VARCHAR
+}
+
+relationship Membeli {
+'Attribute foreign key
+    email
+    sku
+    jumlah
+}
+
+relationship Menjual {
+'Attribute foreign key
+    email
+    sku
+}
+
+'N itu artinya banyak
+Pembeli -N- Membeli
+Membeli -N- Barang
+Barang -N- Menjual
+Menjual -1- Penjual
+@endchen

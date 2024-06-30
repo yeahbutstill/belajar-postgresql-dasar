@@ -64,5 +64,33 @@ https://db-engines.com/en/ranking/relational+dbms
 - DataGrip adalah aplikasi Database Client yang berbayar 
 - DataGrip mendukung banyak sekali DBMS sehingga kita cukup menggunakan DataGrip untuk manajemen semua database yang kita gunakan 
 - Selain mendukung Relational DBMS, DataGrip juga mendukung DBMS yang NoSQL seperti MongoDB, Cassandra, dan lain-lain
-- https://www.jetbrains.com/datagrip/ 
+- https://www.jetbrains.com/datagrip/
+
+# Run PostgreSQL with Docker Compose
+- docker compose -p belajar-postgresql-dasar up
+- docker exec -it <mycontainer postgresql> sh
+
+# Database
+- Database adalah tempat kita menyimpan table di PostgreSQL 
+- Jika kita misalkan table di PostgreSQL adalah sebuah file, maka database adalah folder nya, dimana kita bisa menyimpan banyak table di sebuah database 
+- Biasanya pembuatan kita akan membuat satu database untuk satu jenis aplikasi, walaupun satu aplikasi bisa menggunakan lebih dari satu database, namun lumrahnya, satu aplikasi akan menggunakan satu database
+
+![DBMS](pic/img_2.png)
+
+# Menggunakan PostgreSQL Client
+- psql --host=localhost --port=5432 --dbname=postgres --username=khannedy --password
+
+# Melihat Semua Database di PostgreSQL
+- \l 
+- select datname from pg_database;
+
+# Membuat Database
+- create database nama_database;
+
+# Menghapus Database
+- drop database nama_database;
+
+# Menggunakan Database
+- \c namadatabase
+
 

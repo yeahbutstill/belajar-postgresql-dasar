@@ -2,6 +2,7 @@ select *
 from pg_tables
 where schemaname = 'public';
 
+-- Membuat Table
 create table barang
 (
     kode         int          not null,
@@ -11,12 +12,15 @@ create table barang
     waktu_dibuat TIMESTAMP    not null default current_timestamp
 );
 
+-- Mengubah Table - Tambah Kolom
 alter table barang
     add column deskripsi text;
 
+-- Mengubah Table - Hapus Kolom
 alter table barang
     drop column deskripsi;
 
+-- Mengubah Table - Ganti nama Kolom
 alter table barang
     rename column name to nama;
 

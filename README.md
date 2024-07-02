@@ -185,3 +185,15 @@ https://db-engines.com/en/ranking/relational+dbms
 - Saat kita menyimpan data ke dalam tabel, lalu kita hanya menyimpan beberapa kolom (tidak semuanya), kolom yang tidak kita beri nilai secara default nilainya adalah NULL 
 - Jika kita ingin mengubah default value nya, kita bisa menambahkan perintah DEFAULT NILAI ketika pembuatan kolom nya 
 - Khusus tipe data DATETIME atau TIMESTAMP, jika kita ingin menggunakan default value dengan nilai waktu saat ini, kita bisa gunakan kata kunci CURRENT_TIMESTAMP
+
+# Membuat Ulang Table
+- TRUNCATE nama_tabel;
+
+# Menghapus Table
+- DROP TABLE nama_tabel;
+
+# Insert Data
+- Sebelum kita meng memasukkan data kedalam tabel, tabel harus dibuat terlebih dahulu 
+- Kita bisa menyebutkan kolom mana yang ingin kita isi, jika kita tidak menyebutkan kolom nya, artinya kolom tersebut tidak akan kita isi, dan secara otomatis kolom yang tidak kita isi, nilainya akan NULL, kecuali memiliki DEFAULT VALUE 
+- Untuk memasukkan data kedalam tabel, kita bisa menggunakan perintah SQL yang bernama INSERT
+

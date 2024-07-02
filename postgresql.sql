@@ -24,8 +24,10 @@ alter table barang
 alter table barang
     rename column name to nama;
 
+-- Membuat Ulang Table
 truncate barang;
 
+-- Menghapus Table
 drop table barang;
 
 create table products

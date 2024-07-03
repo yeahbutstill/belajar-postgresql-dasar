@@ -197,3 +197,20 @@ https://db-engines.com/en/ranking/relational+dbms
 - Kita bisa menyebutkan kolom mana yang ingin kita isi, jika kita tidak menyebutkan kolom nya, artinya kolom tersebut tidak akan kita isi, dan secara otomatis kolom yang tidak kita isi, nilainya akan NULL, kecuali memiliki DEFAULT VALUE 
 - Untuk memasukkan data kedalam tabel, kita bisa menggunakan perintah SQL yang bernama INSERT
 
+# Select Data
+- Untuk mengambil data di tabel, kita bisa menggunakan SQL dengan kata kunci SELECT 
+- SELECT bisa digunakan untuk mengambil semua kolom yang ada di tabel, atau sebagian kolom saja 
+- Jika kita ingin mengambil semua kolom, kita bisa gunakan karakter * (bintang)
+- Jika kita hanya ingin mengambil beberapa kolom saja, kita bisa sebutkan nama-nama kolom yang ingin kita ambil datanya
+
+# Primary Key
+- Saat kita membuat tabel, idealnya tiap tabel memiliki Primary Key 
+- Primary key adalah sebuah kolom yang kita tunjuk sebagai id dari tabel tersebut 
+- Primary key adalah identitas untuk tiap baris data di dalam tabel 
+- Primary key harus unik, tidak boleh ada data dengan primary key yang sama 
+- Kita bisa menunjuk kolom yang akan kita jadikan primary key
+
+# Primary Key di Multiple Column
+- Kita bisa membuat primary key dengan kombinasi beberapa kolom 
+- Namun disarankan untuk tetap menggunakan satu kolom ketika membuat primary key 
+- Kecuali ada kasus khusus, seperti membuat tabel yang berelasi MANY TO MANY (yang nanti akan kita bahas)

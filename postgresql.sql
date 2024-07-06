@@ -30,6 +30,7 @@ truncate barang;
 -- Menghapus Table
 drop table barang;
 
+-- Membuat Table Produk
 create table products
 (
     id          varchar(10)  not null,
@@ -40,26 +41,43 @@ create table products
     created_at  timestamp    not null default current_timestamp
 );
 
+-- Memasukan Data
 insert into products(id, name, price, quantity)
 values ('P0001', 'Mie Ayam Original', 15000, 100);
 
 insert into products(id, name, description, price, quantity)
 values ('P0002', 'Mie Ayam Bakso Tahu', 'Mie Ayam Original + Bakso Tahu', 20000, 100);
 
+-- Memasukan Beberapa Data Sekaligus
 insert into products(id, name, price, quantity)
 values ('P0003', 'Mie Ayam Ceker', 20000, 100),
        ('P0004', 'Mie Ayam Spesial', 25000, 100),
        ('P0005', 'Mie Ayam Yamin', 15000, 100);
 
+-- Mengambil Data
 select *
 from products;
 
 select id, name, price, quantity
 from products;
 
+-- Menambahkan Primary Key Ketika Membuat Tabel
+create table products
+(
+    id          varchar(10)  not null,
+    name        varchar(100) not null,
+    description text,
+    price       int          not null,
+    quantity    int          not null default 0,
+    created_at  timestamp    not null default current_timestamp,
+    primary key (id)
+);
+
+-- Menambah Primary Key di Table
 alter table products
     add primary key (id);
 
+-- Mencari Data
 select id, name, price, quantity
 from products
 where quantity = 0;
@@ -72,17 +90,20 @@ select id, name, price, quantity
 from products
 where id = 'P0004';
 
+-- Menampilakan Semua Data Produk
 select *
 from products;
 
+-- Membuat Type Data Enum
 create type PRODUCT_CATEGORY as enum ('Makanan', 'Minuman', 'Lain-Lain');
-
+-- Menambahkan Kolom Kategori
 alter table products
     add column category PRODUCT_CATEGORY;
 
 select *
 from products;
 
+-- Mengubah Satu Kolom
 update products
 set category = 'Makanan'
 where id = 'P0001';
@@ -103,6 +124,7 @@ update products
 set category = 'Makanan'
 where id = 'P0005';
 
+-- Mengubah Beberapa Kolom
 update products
 set category    = 'Makanan',
     description = 'Mie Ayam + Ceker'
@@ -111,6 +133,7 @@ where id = 'P0003';
 SELECT *
 from products;
 
+-- Mengubah Dengan Value di Kolom
 update products
 set price = price + 5000
 where id = 'P0004';
@@ -118,18 +141,22 @@ where id = 'P0004';
 insert into products(id, name, price, quantity, category)
 values ('P0009', 'Contoh', 10000, 100, 'Minuman');
 
+-- Menghapus Data
 delete
 from products
 where id = 'P0009';
 
+-- Alias Untuk Kolom
 select id as "Kode Barang", price as "Harga Barang", description as "Deskripsi Barang"
 from products;
 
+-- Alias untuk Tabel
 select p.id          as "Kode Barang",
        p.price       as "Harga Barang",
        p.description as "Deskripsi Barang"
 from products as p;
 
+-- Mencari Data dengan Operator Perbandingan
 select *
 from products
 where price > 15000;
@@ -142,10 +169,17 @@ select *
 from products
 where category != 'Minuman';
 
+-- Mencari Data dengan Operator AND
 select *
 from products
 where price > 15000
   and category = 'Makanan';
+
+-- Mencari Data dengan Operator OR
+select *
+from products
+where price > 15000
+  OR category = 'Makanan';
 
 SELECT *
 FROM products;

@@ -214,3 +214,46 @@ https://db-engines.com/en/ranking/relational+dbms
 - Kita bisa membuat primary key dengan kombinasi beberapa kolom 
 - Namun disarankan untuk tetap menggunakan satu kolom ketika membuat primary key 
 - Kecuali ada kasus khusus, seperti membuat tabel yang berelasi MANY TO MANY (yang nanti akan kita bahas)
+
+# Where Clause
+- Saat mengambil data menggunakan perintah SQL SELECT, kadang kita ingin melakukan pencarian data 
+- Misal, kita ingin mengambil data barang yang harganya 1jt, atau mengambil data barang yang quantity nya 0 (stok nya kosong)
+- Hal ini bisa kita lakukan dengan WHERE clause setelah perintah SELECT
+
+# Update Data
+- Untuk mengubah data di tabel, kita bisa menggunakan perintah SQL UPDATE 
+- Saat menggunakan SQL UPDATE, kita harus memberi tahu data mana yang akan di update dengan WHERE clause 
+- Hati-hati ketika meng-update data di table, jika sampai WHERE clause nya salah, bisa-bisa kita malah meng-update seluruh data di tabel 
+- Untuk update, kita harus beritahu, kolom mana yang akan di update
+
+# Delete Data
+- Setelah kita tahu cara menambah, mengubah dan mengambil data di tabel, terakhir yang perlu kita ketahui adalah menghapus data di table 
+- Untuk menghapus data di table, kita bisa menggunakan perintah SQL DELETE 
+- Perintah SQL DELETE sama seperti UPDATE, kita perlu memberi tahu data mana yang akan di hapus dengan WHERE clause 
+- Dan hati-hati, jangan sampai salah menentukan WHERE clause, karena jika salah, bisa-bisa kita akan menghapus seluruh data di table
+
+# Alias
+- PostgreSQL memiliki fitur untuk melakukan alias untuk kolom dan tabel 
+- Alias berguna jika kita ingin mengubah nama kolom atau nama tabel ketika melakukan SELECT data 
+- Mungkin saat ini alias untuk tabel tidak terlalu terlihat gunanya, tapi nanti ketika kita telah mempelajari tentang JOIN, maka fitur alias untuk tabel sangat berguna sekali
+
+# Where Operator
+- Sebelumnya di materi where clause kita sudah menggunakan operator = (sama dengan)
+- Sebenarnya sangat banyak sekali operator yang bisa kita gunakan ketika menggunakan where clause 
+- Sekarang kita akan bahas satu per satu
+
+# Operator Perbandingan
+![Operator Perbandingan](pic/img_8.png)
+
+# AND dan OR Operator
+- Kadang kita ingin mencari data dengan beberapa gabungan kondisi, kita bisa menggunakan operator AND dan OR 
+- AND dan OR digunakan untuk menggabungkan beberapa dua operator
+
+# Hasil Operator AND
+![Hasil Operator AND](pic/img_9.png)
+
+# Hasil Operator OR
+![Hasil Operator OR](pic/img_10.png)
+
+# Prioritas dengan Kurung ()
+![Prioritas dengan Kurung](pic/img_11.png)

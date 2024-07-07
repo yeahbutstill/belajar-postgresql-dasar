@@ -231,6 +231,7 @@ select *
 from products
 where price not between 10000 and 20000;
 
+-- Mencari Menggunakan IN Operator
 select *
 from products
 where category in ('Makanan', 'Minuman');

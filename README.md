@@ -279,3 +279,8 @@ https://db-engines.com/en/ranking/relational+dbms
 - Untuk melakukan ini, kita bisa menggunakan WHERE price >= 10000 AND price <= 20000 
 - Namun ada operator BETWEEN yang bisa kita gunakan agar lebih sederhana 
 - Untuk kebalikannya, kita bisa gunakan NOT BETWEEN
+
+# IN Operator
+- Operator IN adalah operator untuk melakukan pencarian sebuah kolom dengan beberapa nilai. 
+- Misal kita ingin mencari products dengan category Makanan atau Minuman, maka kita bisa menggunakan operator IN 
+- Untuk kebalikannya, kita bisa menggunakan NOT IN

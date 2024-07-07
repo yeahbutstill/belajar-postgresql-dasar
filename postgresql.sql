@@ -189,33 +189,40 @@ values ('P0006', 'Es teh tawar', 10000, 100, 'Minuman'),
        ('P0007', 'Es Campur', 20000, 100, 'Minuman'),
        ('P0008', 'Just Jeruk', 15000, 100, 'Minuman');
 
+-- Mencari Data dengan Operator OR
 select *
 from products
 where price > 15000
    or category = 'Makanan';
 
+-- Mencari Data dengan Operator OR dan AND
 select *
 from products
 where quantity > 100
    OR category = 'Makanan' and price > 15000;
 
+-- Prioritas dengan Kurung ()
 select *
 from products
 where category = 'Makanan'
    or (quantity > 100 and price > 15000);
 
+-- Mencari Menggunakan LIKE Operator
 select *
 from products
 where name ilike '%es%';
 
+-- Mencari NULL Menggunakan NULL Operator
 select *
 from products
 where description is null;
 
+-- Mencari NOT NULL Menggunkan IS NOT NULL Operator
 select *
 from products
 where description is not null;
 
+-- 
 select *
 from products
 where price between 10000 and 20000;

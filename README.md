@@ -257,3 +257,18 @@ https://db-engines.com/en/ranking/relational+dbms
 
 # Prioritas dengan Kurung ()
 ![Prioritas dengan Kurung](pic/img_11.png)
+
+# LIKE Operator
+- LIKE operator adalah operator yang bisa kita gunakan untuk mencari sebagian data dalam String 
+- Ini cocok sekali ketika kita hanya ingin mencari sebagian kata dalam String 
+- Namun perlu diingat, operasi LIKE itu sangat lambat, oleh karena itu, tidak disarankan jika datanya sudah terlalu besar di tabel 
+- Operasi LIKE case sensitive, jadi huruf besar dan kecil juga berpengaruh, jika kita ingin tidak case sensitive, bisa menggunakan ILIKE
+
+# Hasil Operator LIKE
+![Hasil Operator LIKE](pic/img_12.png)
+
+# NULL Operator
+- Untuk mencari data yang berisi NULL, kita tidak bisa menggunakan operator perbandingan = NULL. 
+- Ada operator khusus untuk mencari data NULL, yaitu menggunakan NULL operator 
+- IS NULL, artinya mencari yang NULL 
+- IS NOT NULL, artinya mencari yang tidak NULL

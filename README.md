@@ -272,3 +272,10 @@ https://db-engines.com/en/ranking/relational+dbms
 - Ada operator khusus untuk mencari data NULL, yaitu menggunakan NULL operator 
 - IS NULL, artinya mencari yang NULL 
 - IS NOT NULL, artinya mencari yang tidak NULL
+
+# BETWEEN Operator
+- Kadang kita ingin mencari data yang >= dan <= secara sekaligus 
+- Misal kita ingin mencari products yang harganya antara 10000 sampai 20000 
+- Untuk melakukan ini, kita bisa menggunakan WHERE price >= 10000 AND price <= 20000 
+- Namun ada operator BETWEEN yang bisa kita gunakan agar lebih sederhana 
+- Untuk kebalikannya, kita bisa gunakan NOT BETWEEN

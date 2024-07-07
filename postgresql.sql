@@ -222,7 +222,7 @@ select *
 from products
 where description is not null;
 
--- 
+-- Mencari Menggunakan BETWEEN Operator
 select *
 from products
 where price between 10000 and 20000;

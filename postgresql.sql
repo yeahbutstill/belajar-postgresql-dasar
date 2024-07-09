@@ -236,6 +236,7 @@ select *
 from products
 where category in ('Makanan', 'Minuman');
 
+-- Mengurutkan data
 select *
 from products
 order by price asc, id desc;
@@ -245,14 +246,17 @@ from products
 where price > 0
 order by price asc, id desc;
 
+-- Membatasi Hasil Query
 select *
 from products
 where price > 0
 order by price asc, id desc
 limit 2;
 
--- 1 limit 2 offset 0, 2 limit 2 offset 2, 3 limit 2 offset 4
-
+-- Skip Hasil Query
+-- 1. limit 2 offset 0,
+-- 2. limit 2 offset 2,
+-- 3. limit 2 offset 4
 select *
 from products
 where price > 0

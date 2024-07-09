@@ -284,3 +284,14 @@ https://db-engines.com/en/ranking/relational+dbms
 - Operator IN adalah operator untuk melakukan pencarian sebuah kolom dengan beberapa nilai. 
 - Misal kita ingin mencari products dengan category Makanan atau Minuman, maka kita bisa menggunakan operator IN 
 - Untuk kebalikannya, kita bisa menggunakan NOT IN
+
+# Order By Clause
+- Untuk mengurutkan data ketika kita menggunakan perintah SQL SELECT, kita bisa menambahkan ORDER BY clause 
+- ORDER BY clause digunakan untuk mengurutkan data berdasarkan kolom yang dipilih, dan jenis urutan (ASC atau DESC)
+- Kita juga bisa mengurutkan tidak hanya terhadap satu kolom, tapi beberapa kolom
+
+# Limit Clause
+- Mengambil seluruh data di tabel bukanlah pilihan bijak, apalagi jika datanya sudah banyak sekali 
+- Kita bisa membatasi jumlah data yang diambil dalam SQL SELECT dengan LIMIT clause 
+- Selain membatasi jumlah data, kita juga bisa meng-skip sejumlah data yang tidak ingin kita lihat 
+- LIMIT biasanya digunakan saat melakukan paging di aplikasi kita, dengan kombinasi OFFSET

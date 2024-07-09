@@ -266,6 +266,7 @@ limit 2 offset 2;
 select category
 from products;
 
+-- Menghilangkan Data Duplikat
 select distinct category
 from products;
 

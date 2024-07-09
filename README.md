@@ -295,3 +295,8 @@ https://db-engines.com/en/ranking/relational+dbms
 - Kita bisa membatasi jumlah data yang diambil dalam SQL SELECT dengan LIMIT clause 
 - Selain membatasi jumlah data, kita juga bisa meng-skip sejumlah data yang tidak ingin kita lihat 
 - LIMIT biasanya digunakan saat melakukan paging di aplikasi kita, dengan kombinasi OFFSET
+
+# Select Distinct Data
+- Saat melakukan query dengan SELECT, kadang kita mendapatkan data yang duplikat 
+- Misal kita ingin melihat semua kategori di tabel products, maka otomatis hasil query SELECT akan duplikat, karena banyak sekali produk dengan kategori yang sama 
+- Jika kita ingin menghilangkan data-data duplikat tersebut , kita bisa menggunakan SELECT dengan tambahan DISTINCT sebelum nama kolom nya

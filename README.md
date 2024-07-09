@@ -300,3 +300,16 @@ https://db-engines.com/en/ranking/relational+dbms
 - Saat melakukan query dengan SELECT, kadang kita mendapatkan data yang duplikat 
 - Misal kita ingin melihat semua kategori di tabel products, maka otomatis hasil query SELECT akan duplikat, karena banyak sekali produk dengan kategori yang sama 
 - Jika kita ingin menghilangkan data-data duplikat tersebut , kita bisa menggunakan SELECT dengan tambahan DISTINCT sebelum nama kolom nya
+
+# Numeric Function
+- PostgreSQL memiliki banyak sekali fitur untuk manipulasi data angka 
+- Hal ini memudahkan kita untuk memanipulasi data angka 
+- Secara garis besar, fitur ini dibagi menjadi dua, Arithmetic Operator dan Mathematical Function
+
+![Aritmatic Operator](pic/img_13.png)
+
+# Mathematical Function
+- Selain arithmetic operator, ada juga mathematical function 
+- Ini adalah kumpulan function yang terdapat di PostgreSQL yang bisa kita gunakan sebagai fungsi-fungsi matematika 
+- Ada banyak sekali, dan tidak bisa kita bahas semua
+- https://www.postgresql.org/docs/15/functions-math.html 

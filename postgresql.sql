@@ -270,11 +270,13 @@ from products;
 select distinct category
 from products;
 
+-- Menggunakan Aritmatic Operator
 select 10 + 10 as hasil;
 
 select id, name, price / 1000 as price_in_k
 from products;
 
+-- Menggunakan Matematik Function
 select pi();
 
 select power(10, 2);

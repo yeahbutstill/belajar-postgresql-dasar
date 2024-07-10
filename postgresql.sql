@@ -328,6 +328,7 @@ from products;
 select *
 from products;
 
+-- Menambah Kolom Timestamp
 select id, extract(year from created_at), extract(month from created_at)
 from products;
 

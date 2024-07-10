@@ -329,3 +329,8 @@ https://db-engines.com/en/ranking/relational+dbms
 - Sama seperti number, di PostgreSQL juga banyak menyediakan function untuk tipe data String 
 - Ada banyak sekali function-function yang bisa kita gunakan
 - https://www.postgresql.org/docs/15/functions-string.html 
+
+# Date dan Time Function
+- PostgreSQL juga menyediakan banyak sekali function yang bisa kita gunakan untuk mengolah data tipe Date dan Time
+- https://www.postgresql.org/docs/15/functions-datetime.html 
+

@@ -286,6 +286,7 @@ select cos(10), sin(10), tan(10);
 select id, name, power(quantity, 2) as quantity_power_2
 from products;
 
+-- Membuat Table dengan Auto Increment
 create table admin
 (
     id         serial       not null,
@@ -294,6 +295,7 @@ create table admin
     primary key (id)
 );
 
+-- Memasukan Data tanpa id
 insert into admin(first_name, last_name)
 values ('Eko', 'Khannedy'),
        ('Budi', 'Nugraha'),
@@ -302,12 +304,17 @@ values ('Eko', 'Khannedy'),
 select *
 from admin;
 
+-- Melihat id Terakhir
+select currval(pg_get_serial_sequence('admin', 'id'));
 select currval('admin_id_seq');
 
+-- Membuat Sequence
 create sequence contoh_sequence;
 
+-- Memanggil sequence, otomatis increment
 select nextval('contoh_sequence');
 
+-- mengambil nilai terakhir sequence
 select currval('contoh_sequence');
 
 select id, name, description

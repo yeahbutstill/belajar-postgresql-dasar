@@ -317,9 +317,11 @@ select nextval('contoh_sequence');
 -- mengambil nilai terakhir sequence
 select currval('contoh_sequence');
 
+
 select id, name, description
 from products;
 
+-- Menggunakan String Function
 select id, lower(name), length(name), lower(description)
 from products;
 

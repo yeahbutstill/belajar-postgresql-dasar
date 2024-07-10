@@ -324,3 +324,8 @@ https://db-engines.com/en/ranking/relational+dbms
 - Saat kita menggunakan tipe data SERIAL, sebenarnya dibelakangnya, PostgreSQL menggunakan Sequence 
 - Sequence adalah fitur dimana kita bisa membuat function auto increment 
 - Saat menggunakan tipe data SERIAL pada Primary Key, secara otomatis PostgreSQL akan membuat Sequence, dan memanggil function sequence nya sebagai default value untuk Primary Key nya
+
+# String Function
+- Sama seperti number, di PostgreSQL juga banyak menyediakan function untuk tipe data String 
+- Ada banyak sekali function-function yang bisa kita gunakan
+- https://www.postgresql.org/docs/15/functions-string.html 

@@ -334,3 +334,8 @@ https://db-engines.com/en/ranking/relational+dbms
 - PostgreSQL juga menyediakan banyak sekali function yang bisa kita gunakan untuk mengolah data tipe Date dan Time
 - https://www.postgresql.org/docs/15/functions-datetime.html 
 
+# Flow Control Function
+- PostgreSQL memiliki fitur flow control function 
+- Ini mirip IF ELSE di bahasa pemrograman 
+- Tapi ingat, fitur ini tidak se kompleks yang dimiliki bahasa pemrograman
+- https://www.postgresql.org/docs/current/functions-conditional.html 

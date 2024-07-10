@@ -335,6 +335,7 @@ from products;
 select id, category
 from products;
 
+-- Menggunakan Control Flow CASE
 select id,
        category,
        case category
@@ -344,6 +345,7 @@ select id,
            end as category_case
 from products;
 
+-- Menggunakan Operator
 select id,
        price,
        case
@@ -353,6 +355,7 @@ select id,
            end as "apakah murah?"
 from products;
 
+-- Menggunakan Control Flow Check Null
 select id,
        name,
        case

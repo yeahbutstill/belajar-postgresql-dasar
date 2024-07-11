@@ -377,7 +377,7 @@ from products;
 select min(price) as "Harga Termurah"
 from products;
 
-
+-- Menggunakan Group BY
 select category, count(id) as "Total Product"
 from products
 group by category;
@@ -389,6 +389,7 @@ select category,
 from products
 group by category;
 
+-- Menggunakan Having Clause
 select category, count(id) as "Total Product"
 from products
 group by category

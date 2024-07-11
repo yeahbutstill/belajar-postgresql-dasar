@@ -345,3 +345,15 @@ https://db-engines.com/en/ranking/relational+dbms
 - Misal, kita ingin melihat harga paling mahal di table product, atau harga termurah, atau rata-rata harga produk, atau total jumlah data di table, dan lain-lain
 - https://www.postgresql.org/docs/current/functions-aggregate.html
 
+# Group By
+- Kadang saat melakukan aggregate, kita ingin datanya di grouping berdasarkan kriteria tertentu 
+- Misal kita ingin melihat rata-rata harga product, tapi ingin per category 
+- Atau kita ingin melihat total semua product, tapi per category 
+- Hal ini bisa dilakukan di PostgreSQL dengan menggunakan GROUP BY clause 
+- GROUP BY clause ini hanya bisa digunakan jika kita menggunakan aggregate function
+
+# Having Clause
+- Kadang kita ingin melakukan filter terhadap data yang sudah kita grouping 
+- Misal kita ingin menampilkan rata-rata harga per kategori, tapi yang harganya diatas 10.000 misalnya 
+- Jika menggunakan WHERE di SELECT, hal ini tidak bisa dilakukan 
+- Untuk memfilter hasil aggregate function, kita harus menggunakan HAVING clause

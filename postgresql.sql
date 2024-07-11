@@ -364,17 +364,19 @@ select id,
            end as description
 from products;
 
-select count(id)
+-- Menggunakan Aggregate Function
+select count(id) as "Total Product"
 from products;
 
-select avg(price)
+select avg(price) as "Rata-rata Harga"
 from products;
 
-select max(price)
+select max(price) as "Harga Termahal"
 from products;
 
-select min(price)
+select min(price) as "Harga Termurah"
 from products;
+
 
 select category, count(id) as "Total Product"
 from products

@@ -339,3 +339,9 @@ https://db-engines.com/en/ranking/relational+dbms
 - Ini mirip IF ELSE di bahasa pemrograman 
 - Tapi ingat, fitur ini tidak se kompleks yang dimiliki bahasa pemrograman
 - https://www.postgresql.org/docs/current/functions-conditional.html 
+
+# Aggregate Function
+- PostgreSQL mendukung function-function untuk melakukan aggregate
+- Misal, kita ingin melihat harga paling mahal di table product, atau harga termurah, atau rata-rata harga produk, atau total jumlah data di table, dan lain-lain
+- https://www.postgresql.org/docs/current/functions-aggregate.html
+

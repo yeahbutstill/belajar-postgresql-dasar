@@ -403,6 +403,7 @@ from products
 group by category
 having avg(price) >= 20000;
 
+-- Membuat Table dengan Unique Constraint
 create table customer
 (
     id         serial       not null,
@@ -424,17 +425,24 @@ values ('budi@pzn.com', 'Budi', 'Nugraha'),
        ('joko@pzn.com', 'Joko', 'Morro'),
        ('rully@pzn.com', 'Rully', 'Irwansyah');
 
+-- Menghapus Unique Constraint
 alter table customer
     drop constraint unique_email;
 
+-- Menambah Unique Constraint
 alter table customer
     add constraint unique_email unique (email);
 
+-- Menambah Check Constraint
 alter table products
     add constraint price_check check ( price > 1000 );
 
 alter table products
     add constraint quantity_check check ( quantity >= 0 );
+
+-- Menghapus Check Constraint
+alter table products
+    drop constraint price_check;
 
 insert into products(id, name, price, quantity, category)
 values ('XXX1', 'Contoh Gagal', 10, 0, 'Minuman');

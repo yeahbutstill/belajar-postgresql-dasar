@@ -357,3 +357,17 @@ https://db-engines.com/en/ranking/relational+dbms
 - Misal kita ingin menampilkan rata-rata harga per kategori, tapi yang harganya diatas 10.000 misalnya 
 - Jika menggunakan WHERE di SELECT, hal ini tidak bisa dilakukan 
 - Untuk memfilter hasil aggregate function, kita harus menggunakan HAVING clause
+
+# Constraint
+- Di PostgreSQL, kita bisa menambahkan constraint untuk menjaga data di tabel tetap baik 
+- Constraint sangat bagus ditambahkan untuk menjaga terjadi validasi yang salah di program kita, sehingga data yang masuk ke database tetap akan terjaga
+
+# Unique Constraint
+- Unique constraint adalah constraint yang memastikan bahwa data kita tetap unique 
+- Jika kita mencoba memasukkan data yang duplikat, maka PostgreSQL akan menolak data tersebut
+
+# Check Constraint
+- Check constraint adalah constraint yang bisa kita tambahkan kondisi pengecekannya 
+- Ini cocok untuk mengecek data sebelum dimasukkan ke dalam database 
+- Misal kita ingin memastikan bahwa harga harus diatas 1000 misal 
+- Maka kita bisa menggunakan check constraint

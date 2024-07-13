@@ -471,21 +471,28 @@ values ('Galeri Olahraga', 'galeri@pzn.com'),
 SELECT *
 From sellers;
 
+-- Menambah Index
 create index sellers_id_and_name_index ON sellers (id, name);
 create index sellers_email_and_name_index ON sellers (email, name);
 create index sellers_name_index ON sellers (name);
 
+-- Menghapus Index
+drop index seller_name_index;
+
 select *
 from sellers
 where id = 1;
+
 select *
 from sellers
 where id = 1
    or name = 'Toko Tono';
+
 select *
 from sellers
 where email = 'rully@pzn.com'
    or name = 'Toko Tono';
+
 select *
 from sellers
 where name = 'Toko Tono';

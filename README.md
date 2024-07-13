@@ -371,3 +371,27 @@ https://db-engines.com/en/ranking/relational+dbms
 - Ini cocok untuk mengecek data sebelum dimasukkan ke dalam database 
 - Misal kita ingin memastikan bahwa harga harus diatas 1000 misal 
 - Maka kita bisa menggunakan check constraint
+
+# Index
+- Secara default, PostgreSQL akan menyimpan data di dalam disk seperti tabel biasanya 
+- Hal ini menyebabkan, ketika kita mencari data, maka PostgreSQL akan melakukan pencarian dari baris pertama sampai terakhir, yang artinya semakin banyak datanya, maka akan semakin lambat proses pencarian datanya 
+- Kita bisa ubah cara PostgreSQL menyimpan data pada kolom, agar mudah dicari, yaitu menggunakan Index 
+- Saat kita membuat index, PostgreSQL akan menyimpan data dalam struktur data B-Tree : https://en.wikipedia.org/wiki/B-tree
+- Tidak hanya akan mempermudah kita saat melakukan pencarian, index juga akan mempermudah kita ketika melakukan pengurutan menggunakan ORDER BY
+
+# Cara Kerja Index
+- Kita bisa membuat lebih dari satu index di table, dan setiap kita membuat index, kita bisa membuat index untuk beberapa kolom sekaligus 
+- Misal kita membuat index
+- (col1, col2, col3)
+- Artinya kita punya kemampuan untuk mencari lebih menggunakan index untuk kombinasi query di (col1), (col1, col2) dan (col1, col2, col3)
+
+# Efek Samping Membuat Index
+- Index mungkin akan mempercepat untuk proses pencarian dan query data 
+- Namun, saat kita membuat index, artinya PostgreSQL akan melakukan proses update data di index tiap kali kita menambah, mengubah atau menghapus data di table 
+- Artinya Index membuat proses pencarian dan query lebih cepat, tapi memperlambat proses manipulasi data (insert, update dan delete)
+- Oleh karena itu, kita harus bijak saat membuat index
+
+# Tidak Perlu Index
+- Saat kita membuat PRIMARY KEY dan UNIQUE constraint, kita tidak perlu menambahkan lagi index 
+- Hal ini dikarenakan PostgreSQL secara otomatis akan menambahkan index pada kolom PRIMARY KEY dan UNIQUE constraint
+

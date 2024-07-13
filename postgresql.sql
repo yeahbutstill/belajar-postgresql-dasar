@@ -525,6 +525,15 @@ select *
 from products
 where description @@ to_tsquery('mie');
 
+-- Mencari Dengan Operator di Full-Text Search
+select *
+from products
+where name @@ to_tsquery('bakso | tahu');
+select *
+from products
+where description @@ to_tsquery('!bakso');
+
+
 create table wishlist
 (
     id          serial      not null,

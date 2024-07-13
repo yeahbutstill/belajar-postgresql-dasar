@@ -413,3 +413,21 @@ https://db-engines.com/en/ranking/relational+dbms
 # Full-Text Seach Index
 - Untuk membuat index Full-Text Search kita bisa menggunakan perintah yang sama dengan index biasa, tapi harus disebutkan detail dari jenis index Full-Text Search nya
 
+# Query Operator
+- to_tsquery() mendukung banyak operator 
+- & untuk AND 
+- | untuk OR
+- ! untuk NOT 
+- “” untuk semua data
+
+# Tipe Data TSVECTOR
+- Kita juga bisa secara otomatis membuat kolom dengan tipe data TSVECTOR 
+- Secara otomatis kolom tersebut berisi text yang memiliki index Full-Text Search
+
+# Table Relationship
+- Dalam Relational DBMS, salah satu fitur andalan nya adalah table relationship. Yaitu relasi antar tabel 
+- Kita bisa melakukan relasi dari satu tabel ke tabel lain. 
+- Dalam kehidupan nyata pun pasti kita akan sering membuat relasi antar tabel 
+- Misal, saat kita membuat aplikasi penjualan, di laporan penjualan pasti ada data barang. Jika di tabel artinya tabel penjualan akan berelasi dengan tabel barang 
+- Misal dalam aplikasi kampus, tabel mahasiswa akan berelasi dengan tabel mata kuliah, dan tabel dosen 
+- Dan lain-lain

@@ -395,3 +395,21 @@ https://db-engines.com/en/ranking/relational+dbms
 - Saat kita membuat PRIMARY KEY dan UNIQUE constraint, kita tidak perlu menambahkan lagi index 
 - Hal ini dikarenakan PostgreSQL secara otomatis akan menambahkan index pada kolom PRIMARY KEY dan UNIQUE constraint
 
+# Full-Text Search
+# Masalah dengan LIKE operator
+- Kadang kita ingin mencari sebuah kata dalam tabel, dan biasanya kita akan menggunakan LIKE operator 
+- Operasi yang dilakukan LIKE operator adalah dengan cara mencari seluruh data di tabel dari baris pertama sampai terakhir, hal ini membuat operasi LIKE sangat lambat 
+- Menambah index di tabel juga tidak akan membantu, karen LIKE operator tidak menggunakan index 
+- PostgreSQL menyediakan fitur Full Text Search jika ada kasus kita ingin melakukan hal ini
+
+# Full-Text Search
+- Full-Text Search memungkinkan kita bisa mencari sebagian kata di kolom dengan tipe data String 
+- Ini sangat cocok ketika pada kasus kita memang membutuhkan pencarian yang tidak hanya sekedar operasi = (equals, sama dengan)
+- https://www.postgresql.org/docs/current/textsearch-intro.html
+- Di PostgreSQL, Full-Text Search menggunakan function to_tsvector(text) dan to_tsquery(query)
+- Bahkan kita bisa menggunakan function tersebut tanpa membuat index, namun performanya akan sama saja dengan LIKE, lambat karena harus di cek satu-satu 
+- Operator Full-Text Search menggunakan @@, bukan = 
+
+# Full-Text Seach Index
+- Untuk membuat index Full-Text Search kita bisa menggunakan perintah yang sama dengan index biasa, tapi harus disebutkan detail dari jenis index Full-Text Search nya
+

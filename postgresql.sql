@@ -505,12 +505,19 @@ select *
 from products
 where to_tsvector(name) @@ to_tsquery('mie');
 
+-- Get available languages
 select cfgname
 from pg_ts_config;
 
+-- Membuat Index Full-Text Search
 create index products_name_search on products using gin (to_tsvector('indonesian', name));
 create index products_description_search on products using gin (to_tsvector('indonesian', description));
 
+-- Menghapus Index Full-Text Search
+drop index products_name_search;
+drop index products_description_search;
+
+-- Mencari Menggunakan Full-Text Search
 select *
 from products
 where name @@ to_tsquery('ayam & tahu');

@@ -533,7 +533,7 @@ select *
 from products
 where description @@ to_tsquery('!bakso');
 
-
+-- Membuat Table dengan Foreign Key
 create table wishlist
 (
     id          serial      not null,
@@ -543,6 +543,10 @@ create table wishlist
     constraint fk_wishlist_product foreign key (id_product) references products (id)
 );
 
+-- Menambah/Menghapus Foreign Key
+alter table wishlist add constraint fk_wishlist_product foreign key(id_product) references products(id);
+alter table wishlist drop constraint fk_wishlist_product;
+
 insert into wishlist(id_product, description)
 values ('P0001', 'Mie ayam kesukaan'),
        ('P0002', 'Mie ayam kesukaan'),
@@ -551,13 +555,16 @@ values ('P0001', 'Mie ayam kesukaan'),
 SELECT *
 FROM wishlist;
 
+-- Error karena id ini merefrence data ke colom wishlist.id
 delete
 from products
 where id = 'P0005';
 
+-- menghapus fk di table wishlist
 alter table wishlist
     drop constraint fk_wishlist_product;
 
+-- Mengubah Behavior Menghapus Relasi
 alter table wishlist
     add constraint fk_wishlist_product foreign key (id_product) references products (id)
         on delete cascade on update cascade;
@@ -567,6 +574,7 @@ values ('XXX', 'Xxx', 10000, 100, 'Minuman');
 
 SELECT *
 FROM products;
+
 insert into wishlist(id_product, description)
 values ('XXX', 'Contoh');
 

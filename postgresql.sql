@@ -750,7 +750,6 @@ from orders
          join orders_detail on orders_detail.id_order = orders.id
          join products on orders_detail.id_product = products.id;
 
-
 select *
 from orders
          join orders_detail on orders_detail.id_order = orders.id
@@ -772,6 +771,7 @@ insert into products(id, name, price, quantity)
 values ('X0001', 'Contoh 1', 10000, 100),
        ('X0002', 'Contoh 2', 10000, 100);
 
+--- Melakukan Inner Join
 select *
 from categories
          inner join products on products.id_category = categories.id;

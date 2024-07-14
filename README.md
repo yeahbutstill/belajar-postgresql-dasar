@@ -518,3 +518,18 @@ https://db-engines.com/en/ranking/relational+dbms
 - Dengan demikian, kita bisa menambahkan beberapa data ke dalam tabel relasi ini, sehingga berarti satu product bisa dijual beberapa kali di dalam table order, dan satu order bisa membeli lebih dari satu product
 
 ![Diagram Many to Many Relationship](pic/img_17.png)
+
+# Jenis-Jenis Join
+- Sebelumnya kita sudah bahas tentang JOIN table, tapi sebenarnya ada banyak sekali jenis-jenis JOIN table di PostgreSQL, diantaranya :
+- INNER JOIN 
+- LEFT JOIN 
+- RIGHT JOIN 
+- FULL JOIN
+
+# Inner Join
+- INNER JOIN adalah mekanisme JOIN, dimana terdapat relasi antara tabel pertama dan tabel kedua 
+- Jika ada data di tabel pertama yang tidak memiliki relasi di table kedua ataupun sebaliknya, maka hasil INNER JOIN tidak akan ditampilkan 
+- Ini adalah default JOIN di PostgreSQL 
+- Jika kita menggunakan JOIN seperti yang sudah kita praktekan sebelumnya, sebenarnya itu akan melakukan INNER JOIN
+
+![Inner Join](pic/img_18.png)

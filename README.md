@@ -460,3 +460,22 @@ https://db-engines.com/en/ranking/relational+dbms
 - Tapi ingat, semakin banyak JOIN, maka proses query akan semakin berat dan lambat, jadi harap bijak ketika melakukan JOIN 
 - Idealnya kita melakukan JOIN jangan lebih dari 5 tabel, karena itu bisa berdampak ke performa query yang lambat
  
+# One to One Relationship
+# Jenis-Jenis Relasi Tabel
+- Sekarang kita sudah tau untuk melakukan relasi antar tabel, kita bisa menggunakan FOREIGN KEY 
+- Dan untuk melakukan SELECT beberapa tabel, kita bisa menggunakan JOIN 
+- Dalam konsep relasi, ada banyak jenis-jenis relasi antar tabel 
+- Sekarang kita akan bahas dari yang pertama yaitu One to One relationship
+
+# One to One Relationship
+- One to One relationship adalah relasi antar tabel yang paling sederhana 
+- Artinya tiap data di sebuah tabel hanya boleh berelasi ke maksimal 1 data di tabel lainnya 
+- Tidak boleh ada relasi lebih dari 1 data 
+- Contoh misal, kita membuat aplikasi toko online yang terdapat fitur wallet, dan 1 customer, cuma boleh punya 1 wallet
+
+![Diagram One to One](pic/img_14.png)
+
+# Membuat One to One Relationship
+- Cara membuat One to One relationship cukup mudah 
+- Kita bisa membuat kolom foreign key, lalu set kolom tersebut menggunakan UNIQUE KEY, hal ini dapat mencegah terjadi data di kolom tersebut agar tidak duplikat 
+- Atau cara lainnya, kita bisa membuat tabel dengan primary key yang sama, sehingga tidak butuh lagi kolom untuk FOREIGN KEY

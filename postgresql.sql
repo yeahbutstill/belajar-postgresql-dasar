@@ -621,6 +621,7 @@ from wishlist as w
          join products as p on w.id_product = p.id
          join customer as c on c.id = w.id_customer;
 
+-- Membuat Table Wallet
 create table wallet
 (
     id          serial not null,
@@ -646,6 +647,7 @@ from wallet;
 select *
 from customer
          join wallet on wallet.id_customer = customer.id;
+
 
 create table categories
 (

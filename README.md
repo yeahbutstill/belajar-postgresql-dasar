@@ -450,3 +450,13 @@ https://db-engines.com/en/ranking/relational+dbms
 # Behavior Foreign Key
 
 ![Behavior Foreign Key](pic/Screenshot.png)
+
+# Join
+- PostgreSQL mendukung query SELECT langsung ke beberapa tabel secara sekaligus 
+- Namun untuk melakukan itu, kita perlu melakukan JOIN di SQL SELECT yang kita buat 
+- Untuk melakukan JOIN, kita perlu menentukan tabel mana yang merupakan referensi ke tabel lain 
+- Join cocok sekali dengan foreign key, walaupun di PostgreSQL tidak ada aturan kalau JOIN harus ada foreign key 
+- Join di PostgreSQL bisa dilakukan untuk lebih dari beberapa tabel 
+- Tapi ingat, semakin banyak JOIN, maka proses query akan semakin berat dan lambat, jadi harap bijak ketika melakukan JOIN 
+- Idealnya kita melakukan JOIN jangan lebih dari 5 tabel, karena itu bisa berdampak ke performa query yang lambat
+ 

@@ -585,6 +585,7 @@ delete
 from products
 where id = 'XXX';
 
+-- Melakukan Join Table
 select *
 from wishlist
          join products on wishlist.id_product = products.id;
@@ -593,6 +594,7 @@ select p.id, p.name, w.description
 from wishlist as w
          join products as p on w.id_product = p.id;
 
+-- Membuat Relasi Ke Table Customer
 alter table wishlist
     add column id_customer int;
 
@@ -613,6 +615,7 @@ From customer;
 select *
 from wishlist;
 
+-- Melakukan JOIN Multiple Table
 select c.email, p.id, p.name, w.description
 from wishlist as w
          join products as p on w.id_product = p.id

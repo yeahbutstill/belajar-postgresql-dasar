@@ -648,7 +648,7 @@ select *
 from customer
          join wallet on wallet.id_customer = customer.id;
 
-
+-- Membuat Table Categories
 create table categories
 (
     id   varchar(10)  not null,
@@ -663,6 +663,7 @@ values ('C0001', 'Makanan'),
 select *
 from categories;
 
+-- Mengubah Table Product
 alter table products
     add column id_category varchar(10);
 
@@ -687,6 +688,7 @@ select *
 from products
          join categories on products.id_category = categories.id;
 
+-- Membuat Table Order
 create table orders
 (
     id         serial    not null,
@@ -695,6 +697,7 @@ create table orders
     primary key (id)
 );
 
+-- Membuat Table Order Detail
 create table orders_detail
 (
     id_product varchar(10) not null,
@@ -704,6 +707,7 @@ create table orders_detail
     primary key (id_product, id_order)
 );
 
+-- Membut Foreign Key
 alter table orders_detail
     add constraint fk_orders_detail_product foreign key (id_product) references products (id);
 
@@ -740,6 +744,7 @@ values ('P0001', 3, 1000, 2),
 select *
 from orders_detail;
 
+-- Melihat Data Order, Detail dan Product-nya
 select *
 from orders
          join orders_detail on orders_detail.id_order = orders.id

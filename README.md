@@ -479,3 +479,42 @@ https://db-engines.com/en/ranking/relational+dbms
 - Cara membuat One to One relationship cukup mudah 
 - Kita bisa membuat kolom foreign key, lalu set kolom tersebut menggunakan UNIQUE KEY, hal ini dapat mencegah terjadi data di kolom tersebut agar tidak duplikat 
 - Atau cara lainnya, kita bisa membuat tabel dengan primary key yang sama, sehingga tidak butuh lagi kolom untuk FOREIGN KEY
+
+# One to Many Relationship
+- One to many relationship adalah relasi antar tabel dimana satu data bisa digunakan lebih dari satu kali di tabel relasinya 
+- Berbeda dengan one to one yang cuma bisa digunakan maksimal 1 kali di tabel relasinya, one to many tidak ada batasan berapa banyak data digunakan 
+- Contoh relasi antar tabel categories dan products, dimana satu category bisa digunakan oleh lebih dari satu product, yang artinya relasinya nya one category to many products 
+- Pembuatan relasi one to many sebenarnya sama dengan one to one, yang membedakan adalah, kita tidak perlu menggunakan UNIQUE KEY, karena datanya memang bisa berkali-kali ditambahkan di tabel relasi nya
+
+![Diagram One to Many Relationship](pic/img_15.png)
+
+# Many to Many Relationship
+- Many to Many adalah table relationship yang paling kompleks, dan kadang membingungkan untuk pemula 
+- Many to Many adalah relasi dimana ada relasi antara 2 tabel dimana table pertama bisa punya banyak relasi di table kedua, dan table kedua pun punya banyak relasi di table pertama 
+- Ini memang sedikit membingungkan, bagaimana caranya bisa relasi kebanyakan secara bolak balik, sedangkan di table kita cuma punya 1 kolom? 
+- Contoh relasi many to many adalah relasi antara produk dan penjualan, dimana setiap produk bisa dijual berkali kali, dan setiap penjualan bisa untuk lebih dari satu produk
+
+![Many to Many Diagram](pic/img_16.png)
+
+# Bagaimana Implementasi Many to Many?
+- Sekarang pertanyaannya, bagaimana implementasi many to many? 
+- Apakah kita harus menambahkan id_order di table products? atau id_product di table orders?
+
+# Id Product di Table Order
+- Jika kita menambahkan id_product di table orders, artinya sekarang sudah benar, bahwa 1 product bisa dijual berkali-kali 
+- Namun masalahnya adalah, berarti 1 order hanya bisa membeli 1 product, karena cuma ada 1 kolom untuk id_product 
+- Oke kalo gitu kita tambahkan id_product1, id_product2, dan seterusnya. Solusi ini bisa dilakukan, tapi tidak baik, artinya akan selalu ada maksimal barang yang bisa kita beli dalam satu order
+
+# Id Order di Table Product
+- Jika kita tambahkan id_order di table products, artinya sekarang 1 order bisa membeli lebih dari 1 product, oke sudah benar 
+- Tapi sayangnya masalahnya terbalik sekarang, 1 product cuma bisa dijual satu kali, tidak bisa dijual berkali-kali, karena kolom id_order nya cuma 1 
+- Kalupun kita tambah id_order1, id_order2 dan seterusnya di table product, tetap ada batasan maksimal nya 
+- Lantai bagaimana solusinya untuk relasi many to many?
+
+# Membuat Table Relasi
+- Solusi yang biasa dilakukan jika terjadi relasi many to many adalah, biasanya kita akan menambah 1 tabel ditengahnya 
+- Tabel ini bertugas sebagai jembatan untuk menggabungkan relasi many to many 
+- Isi table ini akan ada id dari table pertama dan table kedua, dalam kasus ini adalah id_product dan id_order 
+- Dengan demikian, kita bisa menambahkan beberapa data ke dalam tabel relasi ini, sehingga berarti satu product bisa dijual beberapa kali di dalam table order, dan satu order bisa membeli lebih dari satu product
+
+![Diagram Many to Many Relationship](pic/img_17.png)

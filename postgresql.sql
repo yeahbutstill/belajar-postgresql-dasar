@@ -791,9 +791,11 @@ select *
 from categories
          full join products on products.id_category = categories.id;
 
+-- Aggregate Function AVG
 select avg(price)
 from products;
 
+-- Melakukan SubQuery di WHERE Clause
 select *
 from products
 where price > (select avg(price) from products);
@@ -801,6 +803,7 @@ where price > (select avg(price) from products);
 select *
 from products;
 
+-- Melakukan SubQuery di Form Clause
 select max(price)
 from (select products.price as price
       from categories

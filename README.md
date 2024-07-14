@@ -551,3 +551,12 @@ https://db-engines.com/en/ranking/relational+dbms
 - Jika tidak ada data join, maka hasilnya akan berisi data Null
 
 ![Diagram Full Join](pic/img_21.png)
+
+# Subquery di WHERE
+- PostgreSQL mendukung pencarian data menggunakan WHERE dari hasil SELECT query 
+- Fitur ini dinamakan Subquery 
+- Contoh, kita ingin mencari products yang harganya diatas harga rata-rata, artinya kita akan melakukan SELECT dengan WHERE price > harga rata, dimana harga rata-rata perlu kita hitung menggunakan query SELECT lainnya menggunakan aggregate function AVG
+
+# Subquery di FROM
+- Selain di WHERE clause, Subquery juga bisa dilakukan di FROM clause 
+- Misal kita ingin mencari data dari hasil query SELECT, itu bisa kita lakukan di PostgreSQL

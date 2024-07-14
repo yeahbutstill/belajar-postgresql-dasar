@@ -776,14 +776,17 @@ select *
 from categories
          inner join products on products.id_category = categories.id;
 
+-- Melakukan Left Join
 select *
 from categories
          left join products on products.id_category = categories.id;
 
+-- Melakukan Right Join
 select *
 from categories
          right join products on products.id_category = categories.id;
 
+-- Melakukan Full Outer Join
 select *
 from categories
          full join products on products.id_category = categories.id;

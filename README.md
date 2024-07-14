@@ -533,3 +533,21 @@ https://db-engines.com/en/ranking/relational+dbms
 - Jika kita menggunakan JOIN seperti yang sudah kita praktekan sebelumnya, sebenarnya itu akan melakukan INNER JOIN
 
 ![Inner Join](pic/img_18.png)
+
+# Left Join
+- LEFT JOIN adalah mekanisme JOIN seperti INNER JOIN, namun semua data di table pertama akan diambil juga 
+- Jika ada yang tidak memiliki relasi di table kedua, maka hasilnya akan NULL
+
+![Diagram Left Join](pic/img_19.png)
+
+# Right Join
+- RIGHT JOIN adalah mekanisme JOIN seperti INNER JOIN, namun semua data di table kedua akan diambil juga 
+- Jika ada yang tidak memiliki relasi di table pertama, maka hasilnya akan NULL
+
+![Diagram Right Join](pic/img_20.png)
+
+# Full Join
+- Full Join adalah join dimana semua data di tabel pertama dan kedua akan ditampilkan 
+- Jika tidak ada data join, maka hasilnya akan berisi data Null
+
+![Diagram Full Join](pic/img_21.png)

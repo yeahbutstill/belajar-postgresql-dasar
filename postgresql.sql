@@ -1,6 +1,7 @@
 select *
 from pg_tables
-where schemaname = 'public';
+where schemaname = 'public'
+;
 
 -- Membuat Table
 create table barang
@@ -56,10 +57,12 @@ values ('P0003', 'Mie Ayam Ceker', 20000, 100),
 
 -- Mengambil Data
 select *
-from products;
+from products
+;
 
 select id, name, price, quantity
-from products;
+from products
+;
 
 -- Menambahkan Primary Key Ketika Membuat Tabel
 create table products
@@ -80,19 +83,23 @@ alter table products
 -- Mencari Data
 select id, name, price, quantity
 from products
-where quantity = 0;
+where quantity = 0
+;
 
 select id, name, price, quantity
 from products
-where price = 20000;
+where price = 20000
+;
 
 select id, name, price, quantity
 from products
-where id = 'P0004';
+where id = 'P0004'
+;
 
 -- Menampilakan Semua Data Produk
 select *
-from products;
+from products
+;
 
 -- Membuat Type Data Enum
 create type PRODUCT_CATEGORY as enum ('Makanan', 'Minuman', 'Lain-Lain');
@@ -101,7 +108,8 @@ alter table products
     add column category PRODUCT_CATEGORY;
 
 select *
-from products;
+from products
+;
 
 -- Mengubah Satu Kolom
 update products
@@ -130,8 +138,9 @@ set category    = 'Makanan',
     description = 'Mie Ayam + Ceker'
 where id = 'P0003';
 
-SELECT *
-from products;
+select *
+from products
+;
 
 -- Mengubah Dengan Value di Kolom
 update products
@@ -142,47 +151,54 @@ insert into products(id, name, price, quantity, category)
 values ('P0009', 'Contoh', 10000, 100, 'Minuman');
 
 -- Menghapus Data
-delete
-from products
-where id = 'P0009';
+delete from products
+where id = 'P0009'
+;
 
 -- Alias Untuk Kolom
 select id as "Kode Barang", price as "Harga Barang", description as "Deskripsi Barang"
-from products;
+from products
+;
 
 -- Alias untuk Tabel
-select p.id          as "Kode Barang",
-       p.price       as "Harga Barang",
-       p.description as "Deskripsi Barang"
-from products as p;
+select
+    p.id as "Kode Barang",
+    p.price as "Harga Barang",
+    p.description as "Deskripsi Barang"
+from products as p
+;
 
 -- Mencari Data dengan Operator Perbandingan
 select *
 from products
-where price > 15000;
+where price > 15000
+;
 
 select *
 from products
-where price <= 15000;
+where price <= 15000
+;
 
 select *
 from products
-where category != 'Minuman';
+where category != 'Minuman'
+;
 
 -- Mencari Data dengan Operator AND
 select *
 from products
-where price > 15000
-  and category = 'Makanan';
+where price > 15000 and category = 'Makanan'
+;
 
 -- Mencari Data dengan Operator OR
 select *
 from products
-where price > 15000
-  OR category = 'Makanan';
+where price > 15000 or category = 'Makanan'
+;
 
-SELECT *
-FROM products;
+select *
+from products
+;
 
 insert into products(id, name, price, quantity, category)
 values ('P0006', 'Es teh tawar', 10000, 100, 'Minuman'),
@@ -192,66 +208,75 @@ values ('P0006', 'Es teh tawar', 10000, 100, 'Minuman'),
 -- Mencari Data dengan Operator OR
 select *
 from products
-where price > 15000
-   or category = 'Makanan';
+where price > 15000 or category = 'Makanan'
+;
 
 -- Mencari Data dengan Operator OR dan AND
 select *
 from products
-where quantity > 100
-   OR category = 'Makanan' and price > 15000;
+where quantity > 100 or category = 'Makanan' and price > 15000
+;
 
 -- Prioritas dengan Kurung ()
 select *
 from products
-where category = 'Makanan'
-   or (quantity > 100 and price > 15000);
+where category = 'Makanan' or (quantity > 100 and price > 15000)
+;
 
 -- Mencari Menggunakan LIKE Operator
 select *
 from products
-where name ilike '%es%';
+where name ilike '%es%'
+;
 
 -- Mencari NULL Menggunakan NULL Operator
 select *
 from products
-where description is null;
+where description is null
+;
 
 -- Mencari NOT NULL Menggunkan IS NOT NULL Operator
 select *
 from products
-where description is not null;
+where description is not null
+;
 
 -- Mencari Menggunakan BETWEEN Operator
 select *
 from products
-where price between 10000 and 20000;
+where price between 10000 and 20000
+;
 
 select *
 from products
-where price not between 10000 and 20000;
+where price not between 10000 and 20000
+;
 
 -- Mencari Menggunakan IN Operator
 select *
 from products
-where category in ('Makanan', 'Minuman');
+where category in ('Makanan', 'Minuman')
+;
 
 -- Mengurutkan data
 select *
 from products
-order by price asc, id desc;
+order by price asc, id desc
+;
 
 select *
 from products
 where price > 0
-order by price asc, id desc;
+order by price asc, id desc
+;
 
 -- Membatasi Hasil Query
 select *
 from products
 where price > 0
 order by price asc, id desc
-limit 2;
+limit 2
+;
 
 -- Skip Hasil Query
 -- 1. limit 2 offset 0,
@@ -261,30 +286,40 @@ select *
 from products
 where price > 0
 order by price asc, id desc
-limit 2 offset 2;
+limit 2
+offset 2
+;
 
 select category
-from products;
+from products
+;
 
 -- Menghilangkan Data Duplikat
 select distinct category
-from products;
+from products
+;
 
 -- Menggunakan Aritmatic Operator
-select 10 + 10 as hasil;
+select 10 + 10 as hasil
+;
 
 select id, name, price / 1000 as price_in_k
-from products;
+from products
+;
 
 -- Menggunakan Matematik Function
-select pi();
+select pi()
+;
 
-select power(10, 2);
+select power(10, 2)
+;
 
-select cos(10), sin(10), tan(10);
+select cos(10), sin(10), tan(10)
+;
 
 select id, name, power(quantity, 2) as quantity_power_2
-from products;
+from products
+;
 
 -- Membuat Table dengan Auto Increment
 create table admin
@@ -302,106 +337,129 @@ values ('Eko', 'Khannedy'),
        ('Joko', 'Morro');
 
 select *
-from admin;
+from admin
+;
 
 -- Melihat id Terakhir
-select currval(pg_get_serial_sequence('admin', 'id'));
-select currval('admin_id_seq');
+select currval(pg_get_serial_sequence('admin', 'id'))
+;
+select currval('admin_id_seq')
+;
 
 -- Membuat Sequence
 create sequence contoh_sequence;
 
 -- Memanggil sequence, otomatis increment
-select nextval('contoh_sequence');
+select nextval('contoh_sequence')
+;
 
 -- mengambil nilai terakhir sequence
-select currval('contoh_sequence');
+select currval('contoh_sequence')
+;
 
 
 select id, name, description
-from products;
+from products
+;
 
 -- Menggunakan String Function
 select id, lower(name), length(name), lower(description)
-from products;
+from products
+;
 
 select *
-from products;
+from products
+;
 
 -- Menambah Kolom Timestamp
 select id, extract(year from created_at), extract(month from created_at)
-from products;
+from products
+;
 
 select id, category
-from products;
+from products
+;
 
 -- Menggunakan Control Flow CASE
-select id,
-       category,
-       case category
-           when 'Makanan' then 'Enak'
-           when 'Minuman' then 'Seger'
-           else 'Apa itu?'
-           end as category_case
-from products;
+select
+    id,
+    category,
+    case
+        category when 'Makanan' then 'Enak' when 'Minuman' then 'Seger' else 'Apa itu?'
+    end as category_case
+from products
+;
 
 -- Menggunakan Operator
-select id,
-       price,
-       case
-           when price <= 15000 then 'Murah'
-           when price <= 20000 then 'Mahal'
-           else 'Mahal Banget'
-           end as "apakah murah?"
-from products;
+select
+    id,
+    price,
+    case
+        when price <= 15000
+        then 'Murah'
+        when price <= 20000
+        then 'Mahal'
+        else 'Mahal Banget'
+    end as "apakah murah?"
+from products
+;
 
 -- Menggunakan Control Flow Check Null
-select id,
-       name,
-       case
-           when description is null then 'kosong'
-           else description
-           end as description
-from products;
+select
+    id,
+    name,
+    case when description is null then 'kosong' else description end as description
+from products
+;
 
 -- Menggunakan Aggregate Function
 select count(id) as "Total Product"
-from products;
+from products
+;
 
 select avg(price) as "Rata-rata Harga"
-from products;
+from products
+;
 
 select max(price) as "Harga Termahal"
-from products;
+from products
+;
 
 select min(price) as "Harga Termurah"
-from products;
+from products
+;
 
 -- Menggunakan Group BY
 select category, count(id) as "Total Product"
 from products
-group by category;
+group by category
+;
 
-select category,
-       avg(price) as "Rata Rata Harga",
-       min(price) as "Harga termurah",
-       max(price) as "Harga termahal"
+select
+    category,
+    avg(price) as "Rata Rata Harga",
+    min(price) as "Harga termurah",
+    max(price) as "Harga termahal"
 from products
-group by category;
+group by category
+;
 
 -- Menggunakan Having Clause
 select category, count(id) as "Total Product"
 from products
 group by category
-having count(id) > 3;
+having count(id) > 3
+;
 
-select category,
-       avg(price) as "Rata Rata Harga",
-       min(price) as "Harga termurah",
-       max(price) as "Harga termahal"
+select
+    category,
+    avg(price) as "Rata Rata Harga",
+    min(price) as "Harga termurah",
+    max(price) as "Harga termahal"
 from products
 group by category
-having avg(price) >= 20000;
+having avg(price) >= 20000
+;
 
 -- Membuat Table dengan Unique Constraint
 create table customer
@@ -415,7 +473,8 @@ create table customer
 );
 
 select *
-from customer;
+from customer
+;
 
 insert into customer(email, first_name, last_name)
 values ('eko@pzn.com', 'Eko', 'Khannedy');
@@ -451,7 +510,8 @@ insert into products(id, name, price, quantity, category)
 values ('XXX1', 'Contoh Gagal', 10000, -10, 'Minuman');
 
 select *
-from products;
+from products
+;
 
 create table sellers
 (
@@ -468,8 +528,9 @@ values ('Galeri Olahraga', 'galeri@pzn.com'),
        ('Toko Budi', 'budi@pzn.com'),
        ('Toko Rully', 'rully@pzn.com');
 
-SELECT *
-From sellers;
+select *
+from sellers
+;
 
 -- Menambah Index
 create index sellers_id_and_name_index ON sellers (id, name);
@@ -481,33 +542,38 @@ drop index seller_name_index;
 
 select *
 from sellers
-where id = 1;
-
-select *
-from sellers
 where id = 1
-   or name = 'Toko Tono';
+;
 
 select *
 from sellers
-where email = 'rully@pzn.com'
-   or name = 'Toko Tono';
+where id = 1 or name = 'Toko Tono'
+;
 
 select *
 from sellers
-where name = 'Toko Tono';
+where email = 'rully@pzn.com' or name = 'Toko Tono'
+;
+
+select *
+from sellers
+where name = 'Toko Tono'
+;
 
 select *
 from products
-where name ilike '%mie%';
+where name ilike '%mie%'
+;
 
 select *
 from products
-where to_tsvector(name) @@ to_tsquery('mie');
+where to_tsvector(name) @@ to_tsquery('mie')
+;
 
 -- Get available languages
 select cfgname
-from pg_ts_config;
+from pg_ts_config
+;
 
 -- Membuat Index Full-Text Search
 create index products_name_search on products using gin (to_tsvector('indonesian', name));
@@ -520,18 +586,22 @@ drop index products_description_search;
 -- Mencari Menggunakan Full-Text Search
 select *
 from products
-where name @@ to_tsquery('ayam & tahu');
+where name @@ to_tsquery('ayam & tahu')
+;
 select *
 from products
-where description @@ to_tsquery('mie');
+where description @@ to_tsquery('mie')
+;
 
 -- Mencari Dengan Operator di Full-Text Search
 select *
 from products
-where name @@ to_tsquery('bakso | tahu');
+where name @@ to_tsquery('bakso | tahu')
+;
 select *
 from products
-where description @@ to_tsquery('!bakso');
+where description @@ to_tsquery('!bakso')
+;
 
 -- Membuat Table dengan Foreign Key
 create table wishlist
@@ -552,13 +622,14 @@ values ('P0001', 'Mie ayam kesukaan'),
        ('P0002', 'Mie ayam kesukaan'),
        ('P0005', 'Mie ayam kesukaan');
 
-SELECT *
-FROM wishlist;
+select *
+from wishlist
+;
 
 -- Error karena id ini merefrence data ke colom wishlist.id
-delete
-from products
-where id = 'P0005';
+delete from products
+where id = 'P0005'
+;
 
 -- menghapus fk di table wishlist
 alter table wishlist
@@ -572,27 +643,31 @@ alter table wishlist
 insert into products(id, name, price, quantity, category)
 values ('XXX', 'Xxx', 10000, 100, 'Minuman');
 
-SELECT *
-FROM products;
+select *
+from products
+;
 
 insert into wishlist(id_product, description)
 values ('XXX', 'Contoh');
 
 select *
-from wishlist;
+from wishlist
+;
 
-delete
-from products
-where id = 'XXX';
+delete from products
+where id = 'XXX'
+;
 
 -- Melakukan Join Table
 select *
 from wishlist
-         join products on wishlist.id_product = products.id;
+join products on wishlist.id_product = products.id
+;
 
 select p.id, p.name, w.description
 from wishlist as w
-         join products as p on w.id_product = p.id;
+join products as p on w.id_product = p.id
+;
 
 -- Membuat Relasi Ke Table Customer
 alter table wishlist
@@ -610,16 +685,19 @@ set id_customer = 4
 where id = 4;
 
 select *
-From customer;
+from customer
+;
 
 select *
-from wishlist;
+from wishlist
+;
 
 -- Melakukan JOIN Multiple Table
 select c.email, p.id, p.name, w.description
 from wishlist as w
-         join products as p on w.id_product = p.id
-         join customer as c on c.id = w.id_customer;
+join products as p on w.id_product = p.id
+join customer as c on c.id = w.id_customer
+;
 
 -- Membuat Table Wallet
 create table wallet
@@ -633,7 +711,8 @@ create table wallet
 );
 
 select *
-from customer;
+from customer
+;
 
 insert into wallet(id_customer, balance)
 values (1, 1000000),
@@ -642,11 +721,13 @@ values (1, 1000000),
        (6, 4000000);
 
 select *
-from wallet;
+from wallet
+;
 
 select *
 from customer
-         join wallet on wallet.id_customer = customer.id;
+join wallet on wallet.id_customer = customer.id
+;
 
 -- Membuat Table Categories
 create table categories
@@ -661,7 +742,8 @@ values ('C0001', 'Makanan'),
        ('C0002', 'Minuman');
 
 select *
-from categories;
+from categories
+;
 
 -- Mengubah Table Product
 alter table products
@@ -671,7 +753,8 @@ alter table products
     add constraint fk_product_category foreign key (id_category) references categories (id);
 
 select *
-from products;
+from products
+;
 
 update products
 set id_category = 'C0001'
@@ -686,7 +769,8 @@ alter table products
 
 select *
 from products
-         join categories on products.id_category = categories.id;
+join categories on products.id_category = categories.id
+;
 
 -- Membuat Table Order
 create table orders
@@ -720,11 +804,13 @@ values (1),
        (1);
 
 select *
-from orders;
+from orders
+;
 
 select *
 from products
-order by id;
+order by id
+;
 
 insert into orders_detail (id_product, id_order, price, quantity)
 values ('P0001', 1, 1000, 2),
@@ -742,19 +828,22 @@ values ('P0001', 3, 1000, 2),
        ('P0005', 3, 1000, 2);
 
 select *
-from orders_detail;
+from orders_detail
+;
 
 -- Melihat Data Order, Detail dan Product-nya
 select *
 from orders
-         join orders_detail on orders_detail.id_order = orders.id
-         join products on orders_detail.id_product = products.id;
+join orders_detail on orders_detail.id_order = orders.id
+join products on orders_detail.id_product = products.id
+;
 
 select *
 from orders
-         join orders_detail on orders_detail.id_order = orders.id
-         join products on orders_detail.id_product = products.id
-where orders.id = 3;
+join orders_detail on orders_detail.id_order = orders.id
+join products on orders_detail.id_product = products.id
+where orders.id = 3
+;
 
 insert into categories (id, name)
 VALUES ('C0003', 'Gadget'),
@@ -762,53 +851,67 @@ VALUES ('C0003', 'Gadget'),
        ('C0005', 'Pulsa');
 
 select *
-from categories;
+from categories
+;
 
 select *
-from products;
+from products
+;
 
 insert into products(id, name, price, quantity)
 values ('X0001', 'Contoh 1', 10000, 100),
        ('X0002', 'Contoh 2', 10000, 100);
 
---- Melakukan Inner Join
+-- - Melakukan Inner Join
 select *
 from categories
-         inner join products on products.id_category = categories.id;
+inner join products on products.id_category = categories.id
+;
 
 -- Melakukan Left Join
 select *
 from categories
-         left join products on products.id_category = categories.id;
+left join products on products.id_category = categories.id
+;
 
 -- Melakukan Right Join
 select *
 from categories
-         right join products on products.id_category = categories.id;
+right join products on products.id_category = categories.id
+;
 
 -- Melakukan Full Outer Join
 select *
 from categories
-         full join products on products.id_category = categories.id;
+full join products on products.id_category = categories.id
+;
 
 -- Aggregate Function AVG
 select avg(price)
-from products;
+from products
+;
 
 -- Melakukan SubQuery di WHERE Clause
 select *
 from products
-where price > (select avg(price) from products);
+where price > (select avg(price) from products)
+;
 
 select *
-from products;
+from products
+;
 
 -- Melakukan SubQuery di Form Clause
 select max(price)
-from (select products.price as price
-      from categories
-               join products on products.id_category = categories.id) as contoh;
+from
+    (
+        select products.price as price
+        from categories
+        join products on products.id_category = categories.id
+    ) as contoh
+;
 
+-- Membuat Table Guest Book
 create table guestbooks
 (
     id      serial       not null,
@@ -819,7 +922,8 @@ create table guestbooks
 );
 
 select *
-from customer;
+from customer
+;
 
 insert into guestbooks(email, title, content)
 values ('eko@pzn.com', 'feedback eko', 'ini feedback eko'),
@@ -830,14 +934,17 @@ values ('eko@pzn.com', 'feedback eko', 'ini feedback eko'),
        ('tono@pzn.com', 'feedback tono', 'ini feedback tono');
 
 select *
-from guestbooks;
+from guestbooks
+;
 
+-- Melakukan Query UNION
 select distinct email
 from customer
 union
 select distinct email
 from guestbooks;
 
+-- Melakukan Query UNION ALL
 select email
 from customer
 union all
@@ -845,26 +952,35 @@ select email
 from guestbooks;
 
 select email, count(email)
-from (select email
-      from customer
-      union all
-      select email
-      from guestbooks) as contoh
-group by email;
+from
+    (
+        select email
+        from customer
+        union all
+        select email
+        from guestbooks
+    ) as contoh
+group by email
+;
 
+-- Melakukan Query INTERSECT
 select email
 from customer
 intersect
 select email
-from guestbooks;
+from guestbooks
+;
 
+-- Melakukan Query EXCEPT
 select email
 from customer
 except
 select email
-from guestbooks;
+from guestbooks
+;
 
-start transaction;
+start transaction
+;
 
 insert into guestbooks(email, title, content)
 values ('transaction@pzn.com', 'transaction', 'transaction');
@@ -882,11 +998,14 @@ insert into guestbooks(email, title, content)
 values ('transaction@pzn.com', 'transaction', 'transaction 5');
 
 select *
-from guestbooks;
+from guestbooks
+;
 
-commit;
+commit
+;
 
-start transaction;
+start transaction
+;
 
 insert into guestbooks(email, title, content)
 values ('transaction@pzn.com', 'transaction', 'rollback');
@@ -904,14 +1023,18 @@ insert into guestbooks(email, title, content)
 values ('transaction@pzn.com', 'transaction', 'rollback 5');
 
 select *
-from guestbooks;
+from guestbooks
+;
 
-rollback;
+rollback
+;
 
 select *
-from products;
+from products
+;
 
-start transaction;
+start transaction
+;
 
 update products
 set description = 'Mie ayam original enak'
@@ -919,46 +1042,63 @@ where id = 'P0001';
 
 select *
 from products
-where id = 'P0001';
+where id = 'P0001'
+;
 
-commit;
+commit
+;
 
-start transaction;
-
-select *
-from products
-where id = 'P0001' for update;
-
-rollback;
+start transaction
+;
 
 select *
 from products
-where id = 'P0001';
+where id = 'P0001'
+for update
+;
 
-start transaction;
+rollback
+;
 
 select *
 from products
-where id = 'P0001' for update;
+where id = 'P0001'
+;
+
+start transaction
+;
 
 select *
 from products
-where id = 'P0002' for update;
+where id = 'P0001'
+for update
+;
 
-rollback;
+select *
+from products
+where id = 'P0002'
+for update
+;
 
-select current_schema();
+rollback
+;
+
+select current_schema()
+;
 
 create schema contoh;
 
 drop schema contoh;
 
-SET search_path TO contoh;
+set search_path to contoh
+;
 
-select current_schema();
+select current_schema()
+;
 
 select *
-from public.products;
+from public.products
+;
 
 create table contoh.products
 (
@@ -967,15 +1107,20 @@ create table contoh.products
     primary key (id)
 );
 
-select * from contoh.products;
+select *
+from contoh.products
+;
 
-SET search_path TO public;
+set search_path to public
+;
 
 insert into contoh.products(name)
 values ('iphone'),
        ('Play Station');
 
-select * from contoh.products;
+select *
+from contoh.products
+;
 
 create role eko;
 create role budi;
@@ -987,8 +1132,17 @@ alter role eko login password 'rahasia';
 
 alter role budi login password 'rahasia';
 
-grant insert, update, select on all tables in schema public to eko;
-grant usage, select, update ON guestbooks_id_seq TO eko;
-grant insert, update, select on customer to budi;
+grant insert, update, select
+on all tables in schema public
+to eko
+;
+grant usage, select, update
+on guestbooks_id_seq
+to eko
+;
+grant insert, update, select
+on customer
+to budi
+;
 
 create database belajar_restore;

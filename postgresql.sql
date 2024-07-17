@@ -979,8 +979,9 @@ select email
 from guestbooks
 ;
 
-start transaction
-;
+-- Memulai Transaction - Memulai proses transaksi, proses selanjutnya akan dianggap transaksi sampai perintah COMMIT atau ROLLBACK
+
+start transaction;
 
 insert into guestbooks(email, title, content)
 values ('transaction@pzn.com', 'transaction', 'transaction');
@@ -1001,6 +1002,7 @@ select *
 from guestbooks
 ;
 
+-- Menyimpan secara permanen seluruh proses transaksi
 commit
 ;
 
@@ -1026,6 +1028,7 @@ select *
 from guestbooks
 ;
 
+-- Membatalkan secara permanen seluruh proses transaksi
 rollback
 ;
 

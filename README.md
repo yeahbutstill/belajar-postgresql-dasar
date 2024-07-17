@@ -639,3 +639,33 @@ PostgreSQL mendukung operator Set, dimana ini adalah operasi antara hasil dari d
 - Artinya jika ada data di query pertama yang sama dengan data yang ada di query kedua, maka data tersebut akan dihapus dari hasil query EXCEPT
 
 ![Diagram EXCEPT](pic/4.png)
+
+# Transaction
+# Kenapa Butuh Transaction 
+- Saat membuat aplikasi berbasis database, jarang sekali kita akan melakukan satu jenis perintah SQL per aksi yang dibuat aplikasi 
+- Contoh, ketika membuat toko online, ketika customer menekan tombol Pesan, banyak yang harus kita lakukan, misal 
+  - Membuat data pesanan di tabel order 
+  - Membuat data detail pesanan di tabel order detail 
+  - Menurunkan quantity di tabel produk 
+  - Dan yang lainnya
+- Artinya, bisa saja dalam satu aksi, kita akan melakukan beberapa perintah sekaligus 
+- Jika terjadi kesalahan di salah satu perintah, harapannya adalah perintah-perintah sebelumnya dibatalkan, agar data tetap konsisten
+
+# Database Transaction
+- Database transaction adalah fitur di DBMS dimana kita bisa memungkinan beberapa perintah dianggap menjadi sebuah kesatuan perintah yang kita sebut transaction 
+- Jika terdapat satu saja proses gagal di transaction, maka secara otomatis perintah-perintah sebelumnya akan dibatalkan 
+- Jika sebuah transaction sukses, maka semua perintah akan dipastikan sukses
+
+# Membuat Transaction
+![Membuat Transaction](pic/5.png)
+
+# Membatalkan Transaction
+![Membatalkan Transaction](pic/6.png)
+
+# Transaction di PostgreSQL
+![Transaction di PostgreSQL](pic/7.png)
+
+# Yang Tidak Bisa Menggunakan Transaction
+- Perintah DDL (Data Definition Language) tidak bisa menggunakan fitur transaction 
+- DDL adalah perintah-perintah yang digunakan untuk merubah struktur, seperti membuat tabel, menambah kolom, menghapus tabel, menghapus database, dan sejenisnya 
+- Transaction hanya bisa dilakukan pada perintah DML (Data Manipulation Language), seperti operasi INSERT, UPDATE dan DELETE

@@ -1051,6 +1051,7 @@ where id = 'P0001'
 commit
 ;
 
+-- Test Locking
 start transaction
 ;
 
@@ -1068,6 +1069,7 @@ from products
 where id = 'P0001'
 ;
 
+-- Test Deadlock
 start transaction
 ;
 
@@ -1086,16 +1088,23 @@ for update
 rollback
 ;
 
+-- Melihat Schema Saat Ini
 select current_schema()
 ;
 
+show search_path;
+
+-- Membuat Schema
 create schema contoh;
 
+-- Menghapus Schema
 drop schema contoh;
 
+-- Pindah Schema
 set search_path to contoh
 ;
 
+-- Melihat Schema yang dipakai
 select current_schema()
 ;
 
@@ -1103,6 +1112,7 @@ select *
 from public.products
 ;
 
+-- Membuat Table di Schema dan menentukan schema secara manual
 create table contoh.products
 (
     id   serial       not null,
@@ -1110,17 +1120,21 @@ create table contoh.products
     primary key (id)
 );
 
+-- Melihat Table di Schema
 select *
 from contoh.products
 ;
 
+-- Pindah Schema
 set search_path to public
 ;
 
+-- Memasukan Data Dengan Schema
 insert into contoh.products(name)
 values ('iphone'),
        ('Play Station');
 
+-- Menampilkan data di Schema
 select *
 from contoh.products
 ;

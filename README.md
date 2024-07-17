@@ -699,3 +699,21 @@ PostgreSQL mendukung operator Set, dimana ini adalah operasi antara hasil dari d
 - Proses 2 melakukan SELECT FOR UPDATE untuk data 001, diminta menunggu karena di lock oleh Proses 1 
 - Akhirnya Proses 1 dan Proses 2 saling menunggu 
 - Deadlock terjadi
+
+# Schema
+- Diawal, kita mengibaratkan bahwa database adalah sebuah folder, dan table adalah file-file nya 
+- Di PostgreSQL, terdapat fitur bernama Schema, anggap saja ini adalah folder didalam database 
+- Saat kita membuat database, secara tidak sadar sebenarnya kita menyimpan semua table kita di schema public 
+- Kita bisa membuat schema lain, dan pada schema yang berbeda, kita bisa membuat table dengan nama yang sama
+
+![Diagram Schema](pic/8.png)
+
+# Public Schema
+- Saat kita membuat database di PostgreSQL, secara otomatis terdapat schema bernama public 
+- Dan saat kita membuat table, secara otomatis kita akan membuat table tersebut di schema public
+
+# Membuat Table di Schema
+- Saat kita membuat table, secara otomatis PostgreSQL akan membuatkan table di schema yang sedang kita pilih 
+- Jika kita ingin menentukan schema secara manual tanpa menggunakan schema yang sedang dipilih, kita bisa menambahkan prefix nama schema di awal nama table nya 
+- Misal namaschema.namatable 
+- Termasuk jika ingin melakukan operasi DML ke table, bisa menggunakan prefix namaschema

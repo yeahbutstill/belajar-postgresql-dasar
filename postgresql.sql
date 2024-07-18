@@ -1139,27 +1139,32 @@ select *
 from contoh.products
 ;
 
+-- Membuat User
 create role eko;
 create role budi;
 
+-- Menghapus User
 drop role eko;
 drop role budi;
 
+-- Menambah Option ke User
 alter role eko login password 'rahasia';
-
 alter role budi login password 'rahasia';
 
+-- Menambah Hak Akses ke User
 grant insert, update, select
 on all tables in schema public
-to eko
-;
+to eko;
+
 grant usage, select, update
 on guestbooks_id_seq
-to eko
-;
+to eko;
+
 grant insert, update, select
 on customer
-to budi
-;
+to budi;
+
+-- Menghapus Hak Akses ke User
+revoke insert, update, select on customer from bilal;
 
 create database belajar_restore;

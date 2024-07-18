@@ -717,3 +717,26 @@ PostgreSQL mendukung operator Set, dimana ini adalah operasi antara hasil dari d
 - Jika kita ingin menentukan schema secara manual tanpa menggunakan schema yang sedang dipilih, kita bisa menambahkan prefix nama schema di awal nama table nya 
 - Misal namaschema.namatable 
 - Termasuk jika ingin melakukan operasi DML ke table, bisa menggunakan prefix namaschema
+
+# User Management
+# Root User
+- Secara default, PostgreSQL membuat user utama sebagai super administrator 
+- Namun best practice nya, saat kita menjalankan PostgreSQL dengan aplikasi yang kita buat, sangat disarankan tidak menggunakan user utama 
+- Lebih baik kita buat user khusus untuk tiap aplikasi, bahkan kita bisa batasi hak akses user tersebut, seperti hanya bisa melakukan SELECT, dan tidak boleh melakukan INSERT, UPDATE atau DELETE
+
+# Hak Akses dan User
+- Dalam user management PostgreSQL, kita akan mengenal istilah Hak Akses dari User
+
+# Role Option
+- Saat membuat user / role, terdapat banyak opsi yang bisa kita gunakan 
+- Kita bisa lihat semuanya disini :
+- https://www.postgresql.org/docs/current/sql-createrole.html
+- https://www.postgresql.org/docs/current/sql-alterrole.html 
+
+# Daftar Hak Akses
+- Ada banyak sekali hak akses di PostgreSQL 
+- Kita bisa melihatnya di daftar tabel yang terdapat di halaman berikut :
+- https://www.postgresql.org/docs/current/sql-grant.html
+- Setelah membuat user / role, kita bisa menambahkan hak akses ke user tersebut 
+- Dan kita juga bisa menghapus hak akses yang sudah kita berikan ke user
+- https://www.postgresql.org/docs/current/sql-revoke.html 

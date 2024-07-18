@@ -740,3 +740,19 @@ PostgreSQL mendukung operator Set, dimana ini adalah operasi antara hasil dari d
 - Setelah membuat user / role, kita bisa menambahkan hak akses ke user tersebut 
 - Dan kita juga bisa menghapus hak akses yang sudah kita berikan ke user
 - https://www.postgresql.org/docs/current/sql-revoke.html 
+
+# Backup Database
+- Saat membuat aplikasi menggunakan database, ada baiknya kita selalu melakukan backup data secara reguler 
+- Untungnya PostgreSQL mendukung proses backup database 
+- Untuk melakukan backup database, kita tidak menggunakan perintah SQL, melainkan PostgreSQL menyediakan sebuah aplikasi khusus untuk melakukan backup database, namanya adalah pg_dump
+- https://www.postgresql.org/docs/current/app-pgdump.html 
+
+# Melakukan Backup Database 
+- pg_dump --host=localhost --port=5432 --dbname=belajar --username=khannedy --format=plain --file=/Users/khannedy/backup.sql
+
+# Restore Database
+- Selain melakukan backup database, di PostgreSQL juga kita bisa melakukan proses restore data dari file hasil backup 
+- Untuk melakukan restore database, kita bisa menggunakan aplikasi psql dari PostgreSQL
+
+# Restore Database
+- psql --host=localhost --port=5432 --dbname=belajar_restore --username=khannedy --file=/Users/khannedy/backup.sql

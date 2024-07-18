@@ -1167,4 +1167,5 @@ to budi;
 -- Menghapus Hak Akses ke User
 revoke insert, update, select on customer from bilal;
 
+-- Membuat Database untuk Restore
 create database belajar_restore;
